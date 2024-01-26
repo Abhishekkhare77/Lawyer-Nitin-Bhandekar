@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Card = ({ title, description, imageSrc }) => {
   const [display, setDisplay] = useState(false);
@@ -17,7 +18,7 @@ const Card = ({ title, description, imageSrc }) => {
     <div className="relative">
       <Image alt="imageSrc" src={imageSrc} height={760} width={760} className="absolute -z-10 w-full h-full rounded-xl" />
 
-      <a
+      <Link
         href="#"
         className="block max-w-sm p-6 h-48 w-56 md:h-72 md:w-96 bg-gray-900/40 rounded-lg shadow relative"
         onMouseEnter={handleDisplay}
@@ -33,7 +34,7 @@ const Card = ({ title, description, imageSrc }) => {
         >
           <h5 className="mb-2 text-4xl text-center font-bold tracking-tight text-white">{title}</h5>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };
