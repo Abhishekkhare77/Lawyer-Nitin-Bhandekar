@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="h-100vh w-100vw overflow-hidden">
       <section className="relative h-[40vh] md:h-[100vh] bg-black/70">
-        <Image src={"/lawyerHome.jpg"} width={1000} height={300} className="w-full h-full absolute -z-10"/>
+        <Image src={"/lawyerHome.jpg"} width={1000} height={300} alt="lawyerhome" className="w-full h-full absolute -z-10"/>
         <div className="py-4 md:py-12 px-4 mx-auto max-w-screen-xl text-center">
         <h1 className="mb-4 relative text-2xl mt-8 md:mt-40 font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">The Right Lawyer <br /> Makes All The Difference.</h1>
         <p className="mb-2 md:mb-8 text-sm md:text-lg font-normal text-gray-400 lg:text-xl sm:px-16 xl:px-48">With over 5 years of experience.</p>
