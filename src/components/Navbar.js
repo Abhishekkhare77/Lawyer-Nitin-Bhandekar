@@ -27,7 +27,7 @@ const Navbar = () => {
                     </div>
                     <div className="flex flex-col items-center justify-center">
                         <h1 className="font-bold text-xs">Call us today</h1>
-                        <span onClick={() => window.location.href = "tel:" + +919406366901} className="text-2xl -mt-2 font-extrabold transition-all delay-75 ease-in-out hover:text-blue-700 ">9406366901</span>
+                        <span onClick={() => window.location.href = "tel:" + 9406366901} className="text-2xl -mt-2 font-extrabold transition-all delay-75 ease-in-out hover:text-blue-700 ">9406366901</span>
                     </div>
                 </div>
                 <div className="border-t border-white">
