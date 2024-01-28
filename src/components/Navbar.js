@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image"
 import Link from "next/link"
+import { Bounce, Hinge } from "react-awesome-reveal";
 
 const Navbar = () => {
     return (
@@ -27,7 +28,9 @@ const Navbar = () => {
                     </div>
                     <div className="flex flex-col items-center justify-center">
                         <h1 className="font-bold text-xs">Call us today</h1>
-                        <span onClick={() => window.location.href = "tel:" + 9406366901} className="text-2xl -mt-2 font-extrabold transition-all delay-75 ease-in-out hover:text-blue-700 ">9406366901</span>
+                        <Bounce className="-mt-2">
+                            <span onClick={() => window.location.href = "tel:" + 9406366901} className="text-2xl font-extrabold transition-all delay-75 ease-in-out hover:text-blue-700 ">9406366901</span>
+                        </Bounce>
                     </div>
                 </div>
                 <div className="border-t border-white">

@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Bounce, Fade, JackInTheBox } from "react-awesome-reveal";
 
 const Contactus = () => {
     const [email, setEmail] = useState('');
@@ -51,72 +52,82 @@ const Contactus = () => {
                         Your Voice, Your Victory: Connecting Justice with Compassion. Let&apos;s Navigate Legal Challenges Together.
                     </p>
                     <form onSubmit={handleSubmit} className="space-y-8">
-                        <div>
-                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-300">
-                                Your email
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                className="shadow-sm bg-black border border-gray-300 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
-                                placeholder="example@gmail.com"
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-300">
-                                Subject
-                            </label>
-                            <input
-                                type="text"
-                                id="subject"
-                                value={subject}
-                                onChange={(e) => setSubject(e.target.value)}
-                                className="block p-3 w-full text-sm text-white bg-black rounded-lg border border-gray-300 shadow-sm"
-                                placeholder="Let me know how I can help you"
-                                required
-                            />
-                        </div>
-                        <div className="sm:col-span-2">
-                            <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-400">
-                                Your message
-                            </label>
-                            <textarea
-                                id="message"
-                                rows="6"
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
-                                className="block p-2.5 w-full text-sm text-white bg-black rounded-lg shadow-sm border border-gray-300"
-                                placeholder="Leave a comment..."
-                            ></textarea>
-                        </div>
+                        <Fade>
+                            <div>
+                                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-300">
+                                    Your email
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    className="shadow-sm bg-black border border-gray-300 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                                    placeholder="example@gmail.com"
+                                    required
+                                />
+                            </div>
+                        </Fade>
+                        <Fade>
+                            <div>
+                                <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-300">
+                                    Subject
+                                </label>
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    value={subject}
+                                    onChange={(e) => setSubject(e.target.value)}
+                                    className="block p-3 w-full text-sm text-white bg-black rounded-lg border border-gray-300 shadow-sm"
+                                    placeholder="Let me know how I can help you"
+                                    required
+                                />
+                            </div>
+                        </Fade>
+                        <Fade>
+                            <div className="sm:col-span-2">
+                                <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-400">
+                                    Your message
+                                </label>
+                                <textarea
+                                    id="message"
+                                    rows="6"
+                                    value={message}
+                                    onChange={(e) => setMessage(e.target.value)}
+                                    className="block p-2.5 w-full text-sm text-white bg-black rounded-lg shadow-sm border border-gray-300"
+                                    placeholder="Leave a comment..."
+                                ></textarea>
+                            </div>
+                        </Fade>
                         {submissionError && <div className="text-red-500">{submissionError}</div>}
-                        <div className="flex items-center justify-center">
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-600 sm:w-fit focus:ring-4 focus:outline-none hover:bg-blue-700 focus:ring-blue-800"
-                            >
-                                {isSubmitting ? 'Submitting...' : 'Send message'}
-                            </button>
-                        </div>
+                        <Bounce>
+                            <div className="flex items-center justify-center">
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-600 sm:w-fit focus:ring-4 focus:outline-none hover:bg-blue-700 focus:ring-blue-800"
+                                >
+                                    {isSubmitting ? 'Submitting...' : 'Send message'}
+                                </button>
+                            </div>
+                        </Bounce>
                     </form>
                 </div>
             </section>
             <div className="flex items-center justify-center font-sans font-extrabold text-gray-500">
                 <span className="h-[1px] w-72 bg-gray-500 m-5"></span>OR <span className="h-[1px] w-72 bg-gray-500 m-5"></span>
             </div>
-            <section className="flex items-center justify-center my-5">
-                <div className="flex flex-col justify-center p-5 border space-y-2 border-gray-500 shadow-sm shadow-white rounded-xl">
-                    <p>Law firm - <span className="text-blue-500 font-bold"> BHANDEKAR ASSOCIATE </span></p>
-                    <p> Address (office location)- <span className="hover:underline text-blue-500 font-bold "> <Link target="_blank" href={"https://www.google.com/maps/search/tiwari+colony+dumar+talab+raipur+chhattisgarh/@21.2526884,81.5858398,18.5z?entry=ttu"}>TIWARI COLONY DUMAR TALAB RAIPUR CHHATTISGARH</Link> </span></p>
-                    <p>Phone number  - <span className="text-blue-500 font-bold">+91 9406366901</span></p>
-                    <p>Email address - <Link href={"https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRtswLwpmzkkJQNslKWTmkPtlHFsncmKqGctVJXdgtvSwbqgMtcpvlXZZxPJsRKMZjQTbPl"} target="_blank" className="text-blue-500 font-bold"> nbhandekarassociates@gmail.com</Link></p>
-                    <p>Current Practice Place - <span className="text-blue-500 font-bold uppercase">District and session court raipur chhattisgarh</span></p>
-                </div>
-            </section>
+            <JackInTheBox>
+                <section className="flex items-center justify-center my-5">
+                    <div className="flex flex-col justify-center p-5 border space-y-2 border-gray-500 shadow-sm shadow-white rounded-xl">
+                        <p>Law firm - <span className="text-blue-500 font-bold"> BHANDEKAR ASSOCIATE </span></p>
+                        <p> Address (office location)- <span className="hover:underline text-blue-500 font-bold "> <Link target="_blank" href={"https://www.google.com/maps/search/tiwari+colony+dumar+talab+raipur+chhattisgarh/@21.2526884,81.5858398,18.5z?entry=ttu"}>TIWARI COLONY DUMAR TALAB RAIPUR CHHATTISGARH</Link> </span></p>
+                        <p>Phone number  - <span className="text-blue-500 font-bold">+91 9406366901</span></p>
+                        <p>Email address - <Link href={"https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRtswLwpmzkkJQNslKWTmkPtlHFsncmKqGctVJXdgtvSwbqgMtcpvlXZZxPJsRKMZjQTbPl"} target="_blank" className="text-blue-500 font-bold"> nbhandekarassociates@gmail.com</Link></p>
+                        <p>Current Practice Place - <span className="text-blue-500 font-bold uppercase">District and session court raipur chhattisgarh</span></p>
+                    </div>
+                </section>
+            </JackInTheBox>
         </div>
     )
 }

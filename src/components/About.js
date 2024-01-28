@@ -1,13 +1,18 @@
+"use client";
 import Image from 'next/image'
 import React from 'react'
+import { Zoom } from 'react-awesome-reveal'
 
 const About = () => {
+
     return (
         <div>
             <section className="text-gray-400 body-font">
                 <div className="container mx-auto flex px-5 py-10 md:py-24 md:flex-row flex-col items-center">
                     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                        <Image className="object-cover object-center rounded-xl" alt="hero" height={600} width={600} src="/home.jpg" />
+                        <Zoom>
+                            <Image className="object-cover object-center rounded-xl" alt="hero" height={600} width={600} src="/home.jpg" />
+                        </Zoom>
                     </div>
                     <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
                         <h1 className="title-font sm:text-4xl text-3xl mb-4 font-extrabold text-white"><b className='text-blue-500'>Nitin Bhandekar</b> 
