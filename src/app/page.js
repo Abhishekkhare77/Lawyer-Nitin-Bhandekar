@@ -1,6 +1,6 @@
 "use client";
 import About from "../components/About";
-import Card from "../components/About";
+import Card from "../components/Card";
 import Contactus from "../components/Contactus";
 import Testimonial from "../components/Testimonial";
 import Image from "next/image";
