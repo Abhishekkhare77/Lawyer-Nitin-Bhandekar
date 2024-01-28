@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     // Send email
     await transporter.sendMail({
       from: 'ghostabhi323@gmail.com', // Replace with your email
-      to: 'abhishekkhare583@gmail.com', // Replace with recipient email
+      to: 'nbhandekarassociates@gmail.com', // Replace with recipient email
       subject,
       text: `Email: ${email}\n\nSubject: ${subject}\n\nMessage: ${message}`,
     });
