@@ -10,7 +10,7 @@ const Navbar = () => {
             <nav className="border-gray-200 bg-black/50 shadow-sm shadow-white">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 px-10 md:px-0">
                     <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <Image alt="logo" src={"/logo.png"} className="invert" height={50} width={50} />
+                        <Image alt="logo" src={"/logo.png"} className="invert h-8 w-16" height={100} width={200} />
                     </a>
                     <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                         <ul className="font-medium flex flex-col p-4 md:p-0 ml-2 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">

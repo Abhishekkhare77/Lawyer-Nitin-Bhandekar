@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link"
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const Contactus = () => {
@@ -9,34 +10,36 @@ const Contactus = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submissionError, setSubmissionError] = useState(null);
 
+    const router = useRouter();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
         setSubmissionError(null);
 
         try {
-            console.log(email,subject,message);
-            // const response = await fetch(api, {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify({ email, subject, message }),
-            // });
-
-            // if (response.ok) {
-            //     console.log('Form submitted successfully');
-            //     // You can add logic to show a success message or redirect the user
-            // } else {
-            //     const errorData = await response.json();
-            //     throw new Error(errorData.error || 'Form submission failed');
-            // }
-        } catch (error) {
+            const response = await fetch('/api/contact', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ email, subject, message }),
+            });
+      
+            if (response.ok) {
+              console.log('Form submitted successfully');
+              // You can add logic to show a success message or redirect the user
+              alert('Form submitted Succesfully!'); // Redirect to a success page
+            } else {
+              const errorData = await response.json();
+              throw new Error(errorData.error || 'Form submission failed');
+            }
+          } catch (error) {
             console.error('Error submitting form:', error.message);
             setSubmissionError(error.message);
-        } finally {
+          } finally {
             setIsSubmitting(false);
-        }
+          }
     };
 
     return (
