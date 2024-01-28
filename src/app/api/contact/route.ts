@@ -13,8 +13,8 @@ export async function POST(request: NextRequest) {
       port: 587, // Replace with your SMTP port
       secure: false, // true for 465, false for other ports
       auth: {
-        user: 'ghostabhi323@gmail.com', // Replace with your email
-        pass: 'bkre alar pzqp zfnr', // Replace with your email password
+        user: process.env.USER_EMAIL, // Replace with your email
+        pass: process.env.USER_PASS, // Replace with your email password
       },
     });
 
